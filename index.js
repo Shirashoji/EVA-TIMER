@@ -111,6 +111,8 @@ const setupAction = () => {
   const isNumber = (value) => typeof value === "number" && isFinite(value);
 
   const urlParams = new URLSearchParams(window.location.search);
+  const titlevalue = urlParams.get("title");
+  document.getElementById("title").textContent = titlevalue;
   const timeParam = parseFloat(urlParams.get("time"), 10);
   if (isNumber(timeParam) && 0 <= timeParam && timeParam < maxMinutes) {
     time = timeParam * 60 * 1000;
